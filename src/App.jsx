@@ -248,7 +248,7 @@ export default function App() {
               boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
               background: '#f3f4f6',
             }}>
-              <img src="/IMG_2335.jpg" alt="Cooper Alan" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+              <img src="/IMG_2335.jpg" alt="Cooper Alan" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%' }} />
             </div>
             <div style={{
               width: '200px', height: '340px',

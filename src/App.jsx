@@ -1,33 +1,107 @@
-import { useEffect, useRef, useState, useMemo } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { motion, useMotionValue, useMotionTemplate, useAnimationFrame } from 'framer-motion'
 import './index.css'
 
-function BeamBackground({ count = 55 }) {
-  const beams = useMemo(() => (
-    Array.from({ length: count }).map((_, i) => ({
-      id: i,
-      left: `${Math.random() * 100}%`,
-      width: `${Math.floor(Math.random() * 2) + 1}px`,
-      delay: `${(Math.random() * 6).toFixed(2)}s`,
-      rise: `${(Math.random() * 4 + 5).toFixed(2)}s`,
-    }))
-  ), [count])
+const GRID_SIZE = 44
+
+function GridPattern({ offsetX, offsetY }) {
+  return (
+    <svg style={{ width: '100%', height: '100%' }}>
+      <defs>
+        <motion.pattern
+          id="grid-pattern"
+          width={GRID_SIZE}
+          height={GRID_SIZE}
+          patternUnits="userSpaceOnUse"
+          x={offsetX}
+          y={offsetY}
+        >
+          <path
+            d={`M ${GRID_SIZE} 0 L 0 0 0 ${GRID_SIZE}`}
+            fill="none"
+            stroke="rgba(200,16,46,0.6)"
+            strokeWidth="1"
+          />
+        </motion.pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+    </svg>
+  )
+}
+
+function InfiniteGridHero() {
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+  const gridOffsetX = useMotionValue(0)
+  const gridOffsetY = useMotionValue(0)
+
+  useAnimationFrame(() => {
+    gridOffsetX.set((gridOffsetX.get() + 0.4) % GRID_SIZE)
+    gridOffsetY.set((gridOffsetY.get() + 0.4) % GRID_SIZE)
+  })
+
+  const maskImage = useMotionTemplate`radial-gradient(320px circle at ${mouseX}px ${mouseY}px, black, transparent)`
+
+  function handleMouseMove(e) {
+    const { left, top } = e.currentTarget.getBoundingClientRect()
+    mouseX.set(e.clientX - left)
+    mouseY.set(e.clientY - top)
+  }
 
   return (
-    <div className="hero-scene">
-      <div className="hero-grid" />
-      <div className="hero-floor" />
-      {beams.map(b => (
-        <div
-          key={b.id}
-          className="beam"
-          style={{
-            left: b.left,
-            width: b.width,
-            '--delay': b.delay,
-            '--rise': b.rise,
-          }}
-        />
-      ))}
+    <div
+      onMouseMove={handleMouseMove}
+      style={{ position: 'relative', background: '#0a0000', overflow: 'hidden' }}
+    >
+      {/* Dim base grid */}
+      <div style={{ position: 'absolute', inset: 0, opacity: 0.08 }}>
+        <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} />
+      </div>
+
+      {/* Flashlight grid */}
+      <motion.div style={{ position: 'absolute', inset: 0, opacity: 0.55, maskImage, WebkitMaskImage: maskImage }}>
+        <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} />
+      </motion.div>
+
+      {/* Red glow spheres */}
+      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+        <div style={{ position: 'absolute', right: '-10%', top: '-15%', width: '35%', height: '35%', borderRadius: '50%', background: 'rgba(200,16,46,0.3)', filter: 'blur(100px)' }} />
+        <div style={{ position: 'absolute', left: '-10%', bottom: '-15%', width: '35%', height: '35%', borderRadius: '50%', background: 'rgba(200,16,46,0.2)', filter: 'blur(120px)' }} />
+        <div style={{ position: 'absolute', left: '40%', top: '10%', width: '20%', height: '20%', borderRadius: '50%', background: 'rgba(200,16,46,0.15)', filter: 'blur(80px)' }} />
+      </div>
+
+      {/* Content */}
+      <div style={{ position: 'relative', zIndex: 2, maxWidth: '960px', margin: '0 auto', padding: '110px 40px 120px', textAlign: 'center' }}>
+        <div style={{ marginBottom: '20px' }}>
+          <span className="glossy-wordmark">COOPRM</span>
+        </div>
+
+        <p style={{ fontSize: '20px', fontWeight: '800', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)', marginBottom: '28px', letterSpacing: '-0.01em' }}>
+          "Built by a Real Estate Agent, for Real Estate Agents"
+        </p>
+
+        <h1 style={{ fontSize: '52px', fontWeight: '900', lineHeight: 1.08, letterSpacing: '-0.04em', marginBottom: '22px', color: '#ffffff' }}>
+          The Future of <span style={{ color: '#C8102E' }}>CRM's.</span>
+        </h1>
+
+        <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, maxWidth: '560px', margin: '0 auto 40px', fontWeight: '400' }}>
+          COOPRM is the simple, affordable CRM built by a real estate agent who got tired of overpriced, overcomplicated software that gets in the way instead of helping you close deals.
+        </p>
+
+        <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <a href="https://cooprm.vercel.app" target="_blank" rel="noreferrer" className="glossy-btn">
+            Start for $20/month →
+          </a>
+          <a href="#features" style={{
+            background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.18)',
+            borderRadius: '10px', padding: '14px 32px', color: '#ffffff',
+            fontSize: '15px', fontWeight: '600', display: 'inline-block',
+          }}>
+            See how it works
+          </a>
+        </div>
+        <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.3)', marginTop: '14px' }}>No contracts. Cancel anytime.</p>
+      </div>
     </div>
   )
 }
@@ -173,52 +247,7 @@ export default function App() {
       </nav>
 
       {/* Hero */}
-      <section style={{
-        position: 'relative',
-        background: '#0a0000',
-        padding: '110px 40px 120px',
-        textAlign: 'center',
-        overflow: 'hidden',
-      }}>
-        <BeamBackground count={55} />
-        <div style={{ position: 'relative', zIndex: 2, maxWidth: '960px', margin: '0 auto' }}>
-          <div style={{ marginBottom: '20px' }}>
-            <span className="glossy-wordmark">COOPRM</span>
-          </div>
-
-          <p style={{ fontSize: '20px', fontWeight: '800', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)', marginBottom: '28px', letterSpacing: '-0.01em' }}>
-            "Built by a Real Estate Agent, for Real Estate Agents"
-          </p>
-
-          <h1 style={{
-            fontSize: '52px', fontWeight: '900', lineHeight: 1.08,
-            letterSpacing: '-0.04em', marginBottom: '22px', color: '#ffffff',
-          }}>
-            The Future of <span style={{ color: accent }}>CRM's.</span>
-          </h1>
-
-          <p style={{
-            fontSize: '18px', color: 'rgba(255,255,255,0.55)', lineHeight: 1.75,
-            maxWidth: '560px', margin: '0 auto 40px', fontWeight: '400',
-          }}>
-            COOPRM is the simple, affordable CRM built by a real estate agent who got tired of overpriced, overcomplicated software that gets in the way instead of helping you close deals.
-          </p>
-
-          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="https://cooprm.vercel.app" target="_blank" rel="noreferrer" className="glossy-btn">
-              Start for $20/month →
-            </a>
-            <a href="#features" style={{
-              background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.18)',
-              borderRadius: '10px', padding: '14px 32px', color: '#ffffff',
-              fontSize: '15px', fontWeight: '600', display: 'inline-block',
-            }}>
-              See how it works
-            </a>
-          </div>
-          <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.3)', marginTop: '14px' }}>No contracts. Cancel anytime.</p>
-        </div>
-      </section>
+      <InfiniteGridHero />
 
       {/* Pain points */}
       <section style={{ background: '#0d0d0f', padding: '80px 40px' }}>

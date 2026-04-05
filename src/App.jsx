@@ -2,34 +2,73 @@ import './index.css'
 
 const accent = '#C8102E'
 
+const FeatureIcons = {
+  affordable: (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C8102E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M12 6v2m0 8v2M9 9.5A2.5 2.5 0 0 1 12 8h.5a2.5 2.5 0 0 1 0 5h-1a2.5 2.5 0 0 0 0 5H12a2.5 2.5 0 0 0 2.5-2"/>
+    </svg>
+  ),
+  calendar: (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C8102E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2"/>
+      <path d="M16 2v4M8 2v4M3 10h18"/>
+      <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
+    </svg>
+  ),
+  contacts: (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C8102E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+    </svg>
+  ),
+  simple: (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C8102E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+      <path d="M2 17l10 5 10-5"/>
+      <path d="M2 12l10 5 10-5"/>
+    </svg>
+  ),
+}
+
+const PainIcons = {
+  money: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+    </svg>
+  ),
+  complex: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M12 8v4l3 3"/>
+    </svg>
+  ),
+  addons: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+      <path d="M12 12v6M12 12L3.3 7M12 12l8.7-5"/>
+    </svg>
+  ),
+  mismatch: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 6L6 18M6 6l12 12"/>
+    </svg>
+  ),
+}
+
 const features = [
-  {
-    icon: '💰',
-    title: 'Finally Affordable',
-    body: 'No hidden fees. No expensive add-ons. No complicated tiers. Just $20/month, flat — everything included.',
-  },
-  {
-    icon: '🗓️',
-    title: 'Work Week Calendar',
-    body: 'See your entire week at a glance. Schedule calls, tasks, and appointments with time blocks so you stay on a disciplined, consistent schedule.',
-  },
-  {
-    icon: '👥',
-    title: 'Contact Management Done Right',
-    body: 'Organize your database by status, log activity, set follow-up reminders, and send personalized bulk emails — all in one place.',
-  },
-  {
-    icon: '⚡',
-    title: 'Simple by Design',
-    body: 'No training videos. No onboarding calls. No confusion. Open it and you already know what to do. Built by an agent who got tired of over-engineered software.',
-  },
+  { icon: 'affordable', title: 'Finally Affordable', body: 'No hidden fees. No expensive add-ons. No complicated tiers. Just $20/month, flat — everything included.' },
+  { icon: 'calendar', title: 'Work Week Calendar', body: 'See your entire week at a glance. Schedule calls, tasks, and appointments with time blocks so you stay on a disciplined, consistent schedule.' },
+  { icon: 'contacts', title: 'Contact Management Done Right', body: 'Organize your database by status, log activity, set follow-up reminders, and send personalized bulk emails — all in one place.' },
+  { icon: 'simple', title: 'Simple by Design', body: 'No training videos. No onboarding calls. No confusion. Open it and you already know what to do. Built by an agent who got tired of over-engineered software.' },
 ]
 
 const painPoints = [
-  { emoji: '💸', text: 'Overpriced subscriptions eating into your commission' },
-  { emoji: '😤', text: 'Complicated CRMs that take weeks to learn' },
-  { emoji: '🧩', text: 'Constant add-ons just to get basic features' },
-  { emoji: '📉', text: 'Tools that don\'t match how agents actually work' },
+  { icon: 'money', text: 'Overpriced subscriptions eating into your commission' },
+  { icon: 'complex', text: 'Complicated CRMs that take weeks to learn' },
+  { icon: 'addons', text: 'Constant add-ons just to get basic features' },
+  { icon: 'mismatch', text: "Tools that don't match how agents actually work" },
 ]
 
 export default function App() {
@@ -141,7 +180,7 @@ export default function App() {
                 background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)',
                 borderRadius: '10px', padding: '18px 20px',
               }}>
-                <span style={{ fontSize: '22px', flexShrink: 0 }}>{p.emoji}</span>
+                <div style={{ flexShrink: 0, opacity: 0.6 }}>{PainIcons[p.icon]}</div>
                 <span style={{ fontSize: '14px', color: '#9ca3af', fontWeight: '500', lineHeight: 1.5 }}>{p.text}</span>
               </div>
             ))}
@@ -167,9 +206,10 @@ export default function App() {
               background: 'rgba(255,255,255,0.03)',
               border: '1px solid rgba(255,255,255,0.08)',
               borderRadius: '14px', padding: '28px',
-              transition: 'border-color 0.2s',
             }}>
-              <div style={{ fontSize: '32px', marginBottom: '16px' }}>{f.icon}</div>
+              <div style={{ width: '52px', height: '52px', background: '#C8102E18', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+                {FeatureIcons[f.icon]}
+              </div>
               <h3 style={{ fontSize: '16px', fontWeight: '700', color: '#ffffff', marginBottom: '10px' }}>{f.title}</h3>
               <p style={{ fontSize: '14px', color: '#6b7280', lineHeight: 1.7 }}>{f.body}</p>
             </div>
@@ -215,7 +255,7 @@ export default function App() {
               ].map((item, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <div style={{ width: '18px', height: '18px', borderRadius: '50%', background: accent + '22', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <span style={{ fontSize: '10px', color: accent, fontWeight: '700' }}>✓</span>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke={accent} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
                   <span style={{ fontSize: '14px', color: '#d1d5db', fontWeight: '500' }}>{item}</span>
                 </div>

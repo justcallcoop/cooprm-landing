@@ -123,7 +123,7 @@ export default function App() {
           borderRadius: '20px', padding: '6px 16px', marginBottom: '28px',
         }}>
           <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: accent, display: 'inline-block' }} />
-          <span style={{ fontSize: '12px', fontWeight: '600', color: accent, letterSpacing: '0.04em' }}>Built by a REALTOR®, for REALTORS®</span>
+          <span style={{ fontSize: '12px', fontWeight: '700', fontStyle: 'italic', color: accent, letterSpacing: '0.04em' }}>Built by a Real Estate Agent, for Real Estate Agents</span>
         </div>
 
         <h1 style={{

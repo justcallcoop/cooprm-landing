@@ -121,8 +121,8 @@ export default function App() {
       {/* Nav */}
       <nav style={{
         position: 'sticky', top: 0, zIndex: 100,
-        background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(12px)',
-        borderBottom: `1px solid ${border}`,
+        background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(12px)',
+        borderBottom: '1px solid rgba(255,255,255,0.08)',
         padding: '0 40px', height: '62px',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
@@ -130,11 +130,11 @@ export default function App() {
           <div style={{ width: '28px', height: '28px', background: accent, borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <span style={{ fontSize: '13px', fontWeight: '800', color: '#fff' }}>C</span>
           </div>
-          <span style={{ fontSize: '15px', fontWeight: '700', color: dark, letterSpacing: '0.04em' }}>COOPRM</span>
+          <span style={{ fontSize: '15px', fontWeight: '700', color: '#ffffff', letterSpacing: '0.04em' }}>COOPRM</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '28px' }}>
-          <a href="#features" style={{ fontSize: '13px', color: mid, fontWeight: '500' }}>Features</a>
-          <a href="#pricing" style={{ fontSize: '13px', color: mid, fontWeight: '500' }}>Pricing</a>
+          <a href="#features" style={{ fontSize: '13px', color: '#9ca3af', fontWeight: '500' }}>Features</a>
+          <a href="#pricing" style={{ fontSize: '13px', color: '#9ca3af', fontWeight: '500' }}>Pricing</a>
           <a href="https://cooprm.vercel.app" target="_blank" rel="noreferrer" className="glossy-btn" style={{ fontSize: '13px', padding: '8px 20px', borderRadius: '7px' }}>
             Get Started →
           </a>
@@ -143,28 +143,29 @@ export default function App() {
 
       {/* Hero */}
       <section style={{
-        maxWidth: '960px', margin: '0 auto',
-        padding: '96px 40px 80px',
+        background: 'radial-gradient(ellipse at 50% 40%, #1a1a2e 0%, #0d0d0f 60%, #000000 100%)',
+        padding: '96px 40px 100px',
         textAlign: 'center',
       }}>
+      <div style={{ maxWidth: '960px', margin: '0 auto' }}>
         <div style={{ marginBottom: '36px' }}>
           <span className="glossy-wordmark">COOPRM</span>
         </div>
 
-        <p style={{ fontSize: '20px', fontWeight: '800', fontStyle: 'italic', color: dark, marginBottom: '28px', letterSpacing: '-0.01em' }}>
+        <p style={{ fontSize: '20px', fontWeight: '800', fontStyle: 'italic', color: '#ffffff', marginBottom: '28px', letterSpacing: '-0.01em' }}>
           "Built by a Real Estate Agent, for Real Estate Agents"
         </p>
 
         <h1 style={{
           fontSize: '48px', fontWeight: '900', lineHeight: 1.08,
-          letterSpacing: '-0.04em', marginBottom: '22px', color: dark,
+          letterSpacing: '-0.04em', marginBottom: '22px', color: '#ffffff',
         }}>
           The CRM that actually<br />
           <span style={{ color: accent }}>makes sense.</span>
         </h1>
 
         <p style={{
-          fontSize: '18px', color: mid, lineHeight: 1.75,
+          fontSize: '18px', color: '#9ca3af', lineHeight: 1.75,
           maxWidth: '560px', margin: '0 auto 40px', fontWeight: '400',
         }}>
           COOPRM is the simple, affordable CRM built by a real estate agent who got tired of overpriced, overcomplicated software that gets in the way instead of helping you close deals.
@@ -175,14 +176,15 @@ export default function App() {
             Start for $20/month →
           </a>
           <a href="#features" style={{
-            background: '#ffffff', border: `1px solid ${border}`,
-            borderRadius: '10px', padding: '14px 32px', color: dark,
+            background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)',
+            borderRadius: '10px', padding: '14px 32px', color: '#ffffff',
             fontSize: '15px', fontWeight: '600', display: 'inline-block',
           }}>
             See how it works
           </a>
         </div>
-        <p style={{ fontSize: '12px', color: '#9ca3af', marginTop: '14px' }}>No contracts. Cancel anytime.</p>
+        <p style={{ fontSize: '12px', color: '#4b5563', marginTop: '14px' }}>No contracts. Cancel anytime.</p>
+      </div>
       </section>
 
       {/* Pain points */}

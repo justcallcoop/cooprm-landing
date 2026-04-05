@@ -249,8 +249,7 @@ export default function App() {
               background: '#f3f4f6',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
             }}>
-              {/* Swap src below with your photo filename once uploaded to /public */}
-              <span style={{ fontSize: '13px', color: '#9ca3af' }}>Photo coming soon</span>
+              <img src="/IMG_3450.jpg" alt="Cooper Alan — Founder of COOPRM" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
             </div>
           </Reveal>
 

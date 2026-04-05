@@ -89,7 +89,7 @@ function InfiniteGridHero() {
         </p>
 
         <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a href="https://cooprm.vercel.app" target="_blank" rel="noreferrer" className="glossy-btn">
+          <a href="https://buy.stripe.com/eVqfZi9Kkdil2SUfuX04800" target="_blank" rel="noreferrer" className="glossy-btn">
             Start for $20/month →
           </a>
           <a href="#features" style={{
@@ -240,7 +240,7 @@ export default function App() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '28px' }}>
           <a href="#features" style={{ fontSize: '13px', color: '#6b7280', fontWeight: '500' }}>Features</a>
           <a href="#pricing" style={{ fontSize: '13px', color: '#6b7280', fontWeight: '500' }}>Pricing</a>
-          <a href="https://cooprm.vercel.app" target="_blank" rel="noreferrer" className="glossy-btn" style={{ fontSize: '13px', padding: '8px 20px', borderRadius: '7px' }}>
+          <a href="https://buy.stripe.com/eVqfZi9Kkdil2SUfuX04800" target="_blank" rel="noreferrer" className="glossy-btn" style={{ fontSize: '13px', padding: '8px 20px', borderRadius: '7px' }}>
             Get Started →
           </a>
         </div>
@@ -463,7 +463,7 @@ export default function App() {
                 ))}
               </div>
 
-              <a href="https://cooprm.vercel.app" target="_blank" rel="noreferrer" className="glossy-btn" style={{ display: 'block', textAlign: 'center' }}>
+              <a href="https://buy.stripe.com/eVqfZi9Kkdil2SUfuX04800" target="_blank" rel="noreferrer" className="glossy-btn" style={{ display: 'block', textAlign: 'center' }}>
                 Get Started Today →
               </a>
               <p style={{ fontSize: '12px', color: '#9ca3af', marginTop: '14px' }}>No contracts. Cancel anytime.</p>
@@ -481,7 +481,7 @@ export default function App() {
           <p style={{ fontSize: '16px', color: mid, marginBottom: '40px', lineHeight: 1.75 }}>
             Join agents who ditched the expensive, complicated CRMs and finally have a tool that works the way they do.
           </p>
-          <a href="https://cooprm.vercel.app" target="_blank" rel="noreferrer" className="glossy-btn" style={{ fontSize: '16px', padding: '16px 40px' }}>
+          <a href="https://buy.stripe.com/eVqfZi9Kkdil2SUfuX04800" target="_blank" rel="noreferrer" className="glossy-btn" style={{ fontSize: '16px', padding: '16px 40px' }}>
             Start for $20/month →
           </a>
           <p style={{ fontSize: '12px', color: '#9ca3af', marginTop: '14px' }}>No contracts. Cancel anytime.</p>

@@ -8,6 +8,34 @@ a { text-decoration: none; }
   100% { background-position: 200% center; }
 }
 
+.glossy-btn {
+  background: linear-gradient(
+    105deg,
+    #8b0000 0%,
+    #C8102E 20%,
+    #8b0000 35%,
+    #ff4d4d 48%,
+    #ffffff 52%,
+    #ff4d4d 56%,
+    #8b0000 65%,
+    #C8102E 80%,
+    #8b0000 100%
+  );
+  background-size: 200% auto;
+  animation: shine 7s linear infinite;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 32px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 20px rgba(200,16,46,0.45);
+  cursor: pointer;
+}
+
 .glossy-wordmark {
   font-size: 96px;
   font-weight: 900;

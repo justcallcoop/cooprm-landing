@@ -100,11 +100,7 @@ export default function App() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '28px' }}>
           <a href="#features" style={{ fontSize: '13px', color: mid, fontWeight: '500' }}>Features</a>
           <a href="#pricing" style={{ fontSize: '13px', color: mid, fontWeight: '500' }}>Pricing</a>
-          <a href="https://cooprm.vercel.app" target="_blank" rel="noreferrer" style={{
-            background: accent, borderRadius: '7px',
-            padding: '8px 20px', color: '#fff',
-            fontSize: '13px', fontWeight: '700',
-          }}>
+          <a href="https://cooprm.vercel.app" target="_blank" rel="noreferrer" className="glossy-btn" style={{ fontSize: '13px', padding: '8px 20px', borderRadius: '7px' }}>
             Get Started →
           </a>
         </div>
@@ -146,13 +142,7 @@ export default function App() {
         </p>
 
         <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a href="https://cooprm.vercel.app" target="_blank" rel="noreferrer" style={{
-            background: accent, borderRadius: '10px',
-            padding: '14px 32px', color: '#fff',
-            fontSize: '15px', fontWeight: '700',
-            boxShadow: `0 4px 20px ${accent}40`,
-            display: 'inline-block',
-          }}>
+          <a href="https://cooprm.vercel.app" target="_blank" rel="noreferrer" className="glossy-btn">
             Start for $20/month →
           </a>
           <a href="#features" style={{
@@ -281,13 +271,7 @@ export default function App() {
               ))}
             </div>
 
-            <a href="https://cooprm.vercel.app" target="_blank" rel="noreferrer" style={{
-              display: 'block', background: accent, borderRadius: '10px',
-              padding: '14px 32px', color: '#fff',
-              fontSize: '15px', fontWeight: '700',
-              boxShadow: `0 4px 20px ${accent}40`,
-              textAlign: 'center',
-            }}>
+            <a href="https://cooprm.vercel.app" target="_blank" rel="noreferrer" className="glossy-btn" style={{ display: 'block', textAlign: 'center' }}>
               Get Started Today →
             </a>
             <p style={{ fontSize: '12px', color: '#9ca3af', marginTop: '14px' }}>No contracts. Cancel anytime.</p>
@@ -303,12 +287,7 @@ export default function App() {
         <p style={{ fontSize: '16px', color: mid, marginBottom: '40px', lineHeight: 1.75 }}>
           Join agents who ditched the expensive, complicated CRMs and finally have a tool that works the way they do.
         </p>
-        <a href="https://cooprm.vercel.app" target="_blank" rel="noreferrer" style={{
-          display: 'inline-block', background: accent,
-          borderRadius: '10px', padding: '16px 40px',
-          color: '#fff', fontSize: '16px', fontWeight: '700',
-          boxShadow: `0 4px 28px ${accent}44`,
-        }}>
+        <a href="https://cooprm.vercel.app" target="_blank" rel="noreferrer" className="glossy-btn" style={{ fontSize: '16px', padding: '16px 40px' }}>
           Start for $20/month →
         </a>
         <p style={{ fontSize: '12px', color: '#9ca3af', marginTop: '14px' }}>No contracts. Cancel anytime.</p>

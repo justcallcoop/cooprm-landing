@@ -272,8 +272,11 @@ export default function App() {
             }}>
               "I was spending $150 a month on a CRM I hated. So I built one I actually wanted to use."
             </blockquote>
-            <p style={{ fontSize: '15px', color: mid, lineHeight: 1.8, marginBottom: '28px' }}>
+            <p style={{ fontSize: '15px', color: mid, lineHeight: 1.8, marginBottom: '16px' }}>
               I'm Cooper — a REALTOR® in Northeast Ohio. I got tired of clunky, overpriced software that felt like it was built for a Fortune 500 company, not a solo agent trying to stay organized and close deals. COOPRM is what I wish existed when I started.
+            </p>
+            <p style={{ fontSize: '15px', color: mid, lineHeight: 1.8, marginBottom: '28px' }}>
+              Most people call me Coop. CRM already had a C in it, so I thought — just add COOP and RM. Simple, catchy, easy to remember. And what better way to put your name on something you built than to make it part of the product itself.
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
               <div>

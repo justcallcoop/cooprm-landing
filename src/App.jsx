@@ -239,17 +239,26 @@ export default function App() {
       {/* Founder */}
       <section style={{ background: '#ffffff', padding: '100px 40px', borderTop: `1px solid ${border}` }}>
         <div style={{ maxWidth: '860px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '72px', flexWrap: 'wrap' }}>
-          {/* Photo */}
-          <Reveal direction="left" style={{ flexShrink: 0 }}>
+          {/* Photos */}
+          <Reveal direction="left" style={{ flexShrink: 0, display: 'flex', gap: '16px' }}>
             <div style={{
-              width: '300px', height: '360px',
+              width: '200px', height: '340px',
               borderRadius: '20px',
               overflow: 'hidden',
               boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
               background: '#f3f4f6',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
             }}>
-              <img src="/IMG_3450.jpg" alt="Cooper Alan — Founder of COOPRM" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+              <img src="/IMG_2335.jpg" alt="Cooper Alan" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+            </div>
+            <div style={{
+              width: '200px', height: '340px',
+              borderRadius: '20px',
+              overflow: 'hidden',
+              boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
+              background: '#f3f4f6',
+              marginTop: '32px',
+            }}>
+              <img src="/IMG_3450.jpg" alt="Cooper Alan at HomeSmart" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
             </div>
           </Reveal>
 

@@ -419,6 +419,43 @@ export default function App() {
         </div>
       </section>
 
+      {/* Product Showcase */}
+      <section style={{ background: '#f9fafb', padding: '100px 40px', borderTop: '1px solid #e5e7eb' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+          <Reveal>
+            <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+              <p style={{ fontSize: '11px', fontWeight: '700', color: '#C8102E', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '12px' }}>See it in action</p>
+              <h2 style={{ fontSize: '40px', fontWeight: '900', letterSpacing: '-0.04em', color: '#111827', lineHeight: 1.1 }}>
+                Everything you need,<br />right where you need it.
+              </h2>
+            </div>
+          </Reveal>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
+            {[
+              { src: '/screen-dashboard.png', label: 'Dashboard', desc: 'See your tasks, calls, and appointments for the day at a glance. Your entire operation on one screen.' },
+              { src: '/screen-workweek.png', label: 'Work Week', desc: 'Plan your week like a pro. Time-block calls, tasks, and appointments so nothing falls through the cracks.' },
+              { src: '/screen-deals.png', label: 'Deals', desc: 'Track every active deal, see your projected commission, and know exactly where each client stands.' },
+            ].map((item, i) => (
+              <Reveal key={i} delay={i * 100}>
+                <div style={{ display: 'flex', flexDirection: i % 2 === 0 ? 'row' : 'row-reverse', gap: '48px', alignItems: 'center', flexWrap: 'wrap' }}>
+                  {/* Screenshot */}
+                  <div style={{ flex: '1 1 580px', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 20px 60px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06)', border: '1px solid #e5e7eb' }}>
+                    <img src={item.src} alt={item.label} style={{ width: '100%', display: 'block' }} />
+                  </div>
+                  {/* Label */}
+                  <div style={{ flex: '1 1 200px', minWidth: '180px' }}>
+                    <p style={{ fontSize: '11px', fontWeight: '700', color: '#C8102E', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '10px' }}>{item.label}</p>
+                    <p style={{ fontSize: '22px', fontWeight: '800', color: '#111827', letterSpacing: '-0.02em', lineHeight: 1.3, marginBottom: '14px' }}>{item.label}</p>
+                    <p style={{ fontSize: '15px', color: '#6b7280', lineHeight: 1.75 }}>{item.desc}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Pricing */}
       <section id="pricing" style={{ background: light, borderTop: `1px solid ${border}`, padding: '100px 40px' }}>
         <div style={{ maxWidth: '480px', margin: '0 auto', textAlign: 'center' }}>

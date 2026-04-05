@@ -151,14 +151,9 @@ export default function App() {
           <span className="glossy-wordmark">COOPRM</span>
         </div>
 
-        <div style={{
-          display: 'inline-flex', alignItems: 'center', gap: '8px',
-          background: accent + '12', border: `1px solid ${accent}30`,
-          borderRadius: '20px', padding: '6px 16px', marginBottom: '28px',
-        }}>
-          <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: accent, display: 'inline-block' }} />
-          <span style={{ fontSize: '12px', fontWeight: '700', fontStyle: 'italic', color: accent, letterSpacing: '0.04em' }}>Built by a Real Estate Agent, for Real Estate Agents</span>
-        </div>
+        <p style={{ fontSize: '20px', fontWeight: '800', fontStyle: 'italic', color: dark, marginBottom: '28px', letterSpacing: '-0.01em' }}>
+          "Built by a Real Estate Agent, for Real Estate Agents"
+        </p>
 
         <h1 style={{
           fontSize: '48px', fontWeight: '900', lineHeight: 1.08,

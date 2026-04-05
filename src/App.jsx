@@ -9,8 +9,8 @@ const border = '#e5e7eb'
 const FeatureIcons = {
   affordable: (
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={accent} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="10"/>
-      <path d="M12 6v2m0 8v2M9 9.5A2.5 2.5 0 0 1 12 8h.5a2.5 2.5 0 0 1 0 5h-1a2.5 2.5 0 0 0 0 5H12a2.5 2.5 0 0 0 2.5-2"/>
+      <line x1="12" y1="1" x2="12" y2="23"/>
+      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
     </svg>
   ),
   calendar: (
@@ -205,28 +205,68 @@ export default function App() {
       </section>
 
       {/* Features */}
-      <section id="features" style={{ maxWidth: '920px', margin: '0 auto', padding: '100px 40px' }}>
-        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-          <p style={{ fontSize: '12px', fontWeight: '700', color: accent, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '12px' }}>What you get</p>
-          <h2 style={{ fontSize: '40px', fontWeight: '800', letterSpacing: '-0.03em', color: dark, lineHeight: 1.15 }}>
-            Everything you need.<br />Nothing you don't.
-          </h2>
-        </div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
-          {features.map((f, i) => (
-            <div key={i} style={{
-              background: '#ffffff', border: `1px solid ${border}`,
-              borderRadius: '14px', padding: '28px',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
-            }}>
-              <div style={{ width: '50px', height: '50px', background: accent + '10', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '18px' }}>
-                {FeatureIcons[f.icon]}
-              </div>
-              <h3 style={{ fontSize: '16px', fontWeight: '700', color: dark, marginBottom: '10px' }}>{f.title}</h3>
-              <p style={{ fontSize: '14px', color: mid, lineHeight: 1.75 }}>{f.body}</p>
+      <section id="features" style={{ background: '#ffffff', padding: '100px 40px' }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+          {/* Header */}
+          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '64px', flexWrap: 'wrap', gap: '20px' }}>
+            <div>
+              <p style={{ fontSize: '11px', fontWeight: '700', color: accent, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '12px' }}>What you get</p>
+              <h2 style={{ fontSize: '44px', fontWeight: '900', letterSpacing: '-0.04em', color: dark, lineHeight: 1.08 }}>
+                Everything you need.<br />
+                <span style={{ color: '#9ca3af', fontWeight: '400' }}>Nothing you don't.</span>
+              </h2>
             </div>
-          ))}
+            <p style={{ fontSize: '15px', color: mid, lineHeight: 1.7, maxWidth: '320px' }}>
+              Four reasons thousands of agents are switching to a CRM that actually fits their workflow.
+            </p>
+          </div>
+
+          {/* Feature grid — alternating large + small */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+            {features.map((f, i) => (
+              <div key={i} style={{
+                background: i === 0 ? '#0d0d0f' : i === 3 ? '#0d0d0f' : '#f9fafb',
+                borderRadius: '20px',
+                padding: '36px',
+                border: i === 0 || i === 3 ? 'none' : `1px solid ${border}`,
+                position: 'relative',
+                overflow: 'hidden',
+              }}>
+                {/* Large number watermark */}
+                <div style={{
+                  position: 'absolute', top: '-10px', right: '20px',
+                  fontSize: '120px', fontWeight: '900', lineHeight: 1,
+                  color: i === 0 || i === 3 ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.04)',
+                  letterSpacing: '-0.06em', userSelect: 'none', pointerEvents: 'none',
+                }}>
+                  {String(i + 1).padStart(2, '0')}
+                </div>
+                {/* Icon */}
+                <div style={{
+                  width: '48px', height: '48px',
+                  background: i === 0 || i === 3 ? accent + '25' : accent + '12',
+                  borderRadius: '14px',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  marginBottom: '24px',
+                }}>
+                  {FeatureIcons[f.icon]}
+                </div>
+                <h3 style={{
+                  fontSize: '20px', fontWeight: '800',
+                  color: i === 0 || i === 3 ? '#ffffff' : dark,
+                  marginBottom: '12px', letterSpacing: '-0.02em',
+                }}>
+                  {f.title}
+                </h3>
+                <p style={{
+                  fontSize: '14px', lineHeight: 1.75,
+                  color: i === 0 || i === 3 ? '#6b7280' : mid,
+                }}>
+                  {f.body}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

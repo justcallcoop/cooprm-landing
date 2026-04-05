@@ -352,42 +352,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Photo Gallery Strip */}
-      <section style={{ background: '#f9fafb', padding: '64px 0', overflow: 'hidden' }}>
-        <Reveal>
-          <p style={{ textAlign: 'center', fontSize: '11px', fontWeight: '700', color: '#C8102E', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '32px' }}>In the field</p>
-        </Reveal>
-        <div style={{
-          display: 'flex', gap: '16px', overflowX: 'auto', paddingLeft: '40px', paddingRight: '40px',
-          scrollbarWidth: 'none', msOverflowStyle: 'none',
-        }}>
-          {[
-            { src: '/IMG_2707.jpg', pos: 'center center' },
-            { src: '/IMG_2707_2.jpg', pos: 'center center' },
-            { src: '/IMG_2454.png', pos: 'center top' },
-            { src: '/IMG_2454_2.png', pos: 'center top' },
-            { src: '/IMG_2454_3.png', pos: 'center top' },
-            { src: '/IMG_3523.jpg', pos: 'center center' },
-            { src: '/IMG_3533.jpg', pos: 'center center' },
-          ].map((photo, i) => (
-            <div key={i} style={{
-              flexShrink: 0,
-              width: '260px', height: '320px',
-              borderRadius: '16px',
-              overflow: 'hidden',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.10)',
-              marginTop: i % 2 === 1 ? '24px' : '0',
-            }}>
-              <img
-                src={photo.src}
-                alt={`Cooper Alan - photo ${i + 1}`}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: photo.pos }}
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Features */}
       <section id="features" style={{ background: '#ffffff', padding: '100px 40px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>

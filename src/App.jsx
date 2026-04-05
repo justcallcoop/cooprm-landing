@@ -19,7 +19,7 @@ function GridPattern({ offsetX, offsetY }) {
           <path
             d={`M ${GRID_SIZE} 0 L 0 0 0 ${GRID_SIZE}`}
             fill="none"
-            stroke="rgba(200,16,46,0.6)"
+            stroke="rgba(200,16,46,0.25)"
             strokeWidth="1"
           />
         </motion.pattern>
@@ -51,7 +51,7 @@ function InfiniteGridHero() {
   return (
     <div
       onMouseMove={handleMouseMove}
-      style={{ position: 'relative', background: '#0a0000', overflow: 'hidden' }}
+      style={{ position: 'relative', background: '#ffffff', overflow: 'hidden' }}
     >
       {/* Dim base grid */}
       <div style={{ position: 'absolute', inset: 0, opacity: 0.08 }}>
@@ -65,9 +65,9 @@ function InfiniteGridHero() {
 
       {/* Red glow spheres */}
       <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-        <div style={{ position: 'absolute', right: '-10%', top: '-15%', width: '35%', height: '35%', borderRadius: '50%', background: 'rgba(200,16,46,0.3)', filter: 'blur(100px)' }} />
-        <div style={{ position: 'absolute', left: '-10%', bottom: '-15%', width: '35%', height: '35%', borderRadius: '50%', background: 'rgba(200,16,46,0.2)', filter: 'blur(120px)' }} />
-        <div style={{ position: 'absolute', left: '40%', top: '10%', width: '20%', height: '20%', borderRadius: '50%', background: 'rgba(200,16,46,0.15)', filter: 'blur(80px)' }} />
+        <div style={{ position: 'absolute', right: '-10%', top: '-15%', width: '35%', height: '35%', borderRadius: '50%', background: 'rgba(200,16,46,0.08)', filter: 'blur(100px)' }} />
+        <div style={{ position: 'absolute', left: '-10%', bottom: '-15%', width: '35%', height: '35%', borderRadius: '50%', background: 'rgba(200,16,46,0.06)', filter: 'blur(120px)' }} />
+        <div style={{ position: 'absolute', left: '40%', top: '10%', width: '20%', height: '20%', borderRadius: '50%', background: 'rgba(200,16,46,0.05)', filter: 'blur(80px)' }} />
       </div>
 
       {/* Content */}
@@ -76,15 +76,15 @@ function InfiniteGridHero() {
           <span className="glossy-wordmark">COOPRM</span>
         </div>
 
-        <p style={{ fontSize: '20px', fontWeight: '800', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)', marginBottom: '28px', letterSpacing: '-0.01em' }}>
+        <p style={{ fontSize: '20px', fontWeight: '800', fontStyle: 'italic', color: '#111827', marginBottom: '28px', letterSpacing: '-0.01em' }}>
           "Built by a Real Estate Agent, for Real Estate Agents"
         </p>
 
-        <h1 style={{ fontSize: '52px', fontWeight: '900', lineHeight: 1.08, letterSpacing: '-0.04em', marginBottom: '22px', color: '#ffffff' }}>
+        <h1 style={{ fontSize: '52px', fontWeight: '900', lineHeight: 1.08, letterSpacing: '-0.04em', marginBottom: '22px', color: '#111827' }}>
           The Future of <span style={{ color: '#C8102E' }}>CRM's.</span>
         </h1>
 
-        <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, maxWidth: '560px', margin: '0 auto 40px', fontWeight: '400' }}>
+        <p style={{ fontSize: '18px', color: '#6b7280', lineHeight: 1.75, maxWidth: '560px', margin: '0 auto 40px', fontWeight: '400' }}>
           COOPRM is the simple, affordable CRM built by a real estate agent who got tired of overpriced, overcomplicated software that gets in the way instead of helping you close deals.
         </p>
 
@@ -93,14 +93,14 @@ function InfiniteGridHero() {
             Start for $20/month →
           </a>
           <a href="#features" style={{
-            background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.18)',
-            borderRadius: '10px', padding: '14px 32px', color: '#ffffff',
+            background: '#ffffff', border: '1px solid #e5e7eb',
+            borderRadius: '10px', padding: '14px 32px', color: '#111827',
             fontSize: '15px', fontWeight: '600', display: 'inline-block',
           }}>
             See how it works
           </a>
         </div>
-        <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.3)', marginTop: '14px' }}>No contracts. Cancel anytime.</p>
+        <p style={{ fontSize: '12px', color: '#9ca3af', marginTop: '14px' }}>No contracts. Cancel anytime.</p>
       </div>
     </div>
   )
@@ -226,8 +226,8 @@ export default function App() {
       {/* Nav */}
       <nav style={{
         position: 'sticky', top: 0, zIndex: 100,
-        background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(16px)',
-        borderBottom: '1px solid rgba(200,16,46,0.2)',
+        background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(16px)',
+        borderBottom: '1px solid #e5e7eb',
         padding: '0 40px', height: '62px',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
@@ -235,11 +235,11 @@ export default function App() {
           <div style={{ width: '28px', height: '28px', background: accent, borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <span style={{ fontSize: '13px', fontWeight: '800', color: '#fff' }}>C</span>
           </div>
-          <span style={{ fontSize: '15px', fontWeight: '700', color: '#ffffff', letterSpacing: '0.04em' }}>COOPRM</span>
+          <span style={{ fontSize: '15px', fontWeight: '700', color: '#111827', letterSpacing: '0.04em' }}>COOPRM</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '28px' }}>
-          <a href="#features" style={{ fontSize: '13px', color: '#9ca3af', fontWeight: '500' }}>Features</a>
-          <a href="#pricing" style={{ fontSize: '13px', color: '#9ca3af', fontWeight: '500' }}>Pricing</a>
+          <a href="#features" style={{ fontSize: '13px', color: '#6b7280', fontWeight: '500' }}>Features</a>
+          <a href="#pricing" style={{ fontSize: '13px', color: '#6b7280', fontWeight: '500' }}>Pricing</a>
           <a href="https://cooprm.vercel.app" target="_blank" rel="noreferrer" className="glossy-btn" style={{ fontSize: '13px', padding: '8px 20px', borderRadius: '7px' }}>
             Get Started →
           </a>

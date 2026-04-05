@@ -236,6 +236,47 @@ export default function App() {
         </div>
       </section>
 
+      {/* Founder */}
+      <section style={{ background: '#ffffff', padding: '100px 40px', borderTop: `1px solid ${border}` }}>
+        <div style={{ maxWidth: '860px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '72px', flexWrap: 'wrap' }}>
+          {/* Photo */}
+          <Reveal direction="left" style={{ flexShrink: 0 }}>
+            <div style={{
+              width: '300px', height: '360px',
+              borderRadius: '20px',
+              overflow: 'hidden',
+              boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
+              background: '#f3f4f6',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}>
+              {/* Swap src below with your photo filename once uploaded to /public */}
+              <span style={{ fontSize: '13px', color: '#9ca3af' }}>Photo coming soon</span>
+            </div>
+          </Reveal>
+
+          {/* Text */}
+          <Reveal direction="right" delay={100} style={{ flex: 1, minWidth: '280px' }}>
+            <p style={{ fontSize: '11px', fontWeight: '700', color: accent, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '16px' }}>From the founder</p>
+            <blockquote style={{
+              fontSize: '24px', fontWeight: '800', lineHeight: 1.35,
+              letterSpacing: '-0.03em', color: dark,
+              marginBottom: '24px',
+            }}>
+              "I was spending $150 a month on a CRM I hated. So I built one I actually wanted to use."
+            </blockquote>
+            <p style={{ fontSize: '15px', color: mid, lineHeight: 1.8, marginBottom: '28px' }}>
+              I'm Cooper — a REALTOR® in Northeast Ohio. I got tired of clunky, overpriced software that felt like it was built for a Fortune 500 company, not a solo agent trying to stay organized and close deals. COOPRM is what I wish existed when I started.
+            </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+              <div>
+                <div style={{ fontSize: '15px', fontWeight: '700', color: dark }}>Cooper Alan</div>
+                <div style={{ fontSize: '13px', color: mid }}>REALTOR® · Founder of COOPRM</div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Features */}
       <section id="features" style={{ background: '#ffffff', padding: '100px 40px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>

@@ -274,7 +274,7 @@ export default function App() {
                   <div style={{
                     position: 'absolute', top: '-10px', right: '20px',
                     fontSize: '120px', fontWeight: '900', lineHeight: 1,
-                    color: i === 0 || i === 3 ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.04)',
+                    color: i === 0 || i === 3 ? 'rgba(255,255,255,0.18)' : 'rgba(0,0,0,0.10)',
                     letterSpacing: '-0.06em', userSelect: 'none', pointerEvents: 'none',
                   }}>
                     {String(i + 1).padStart(2, '0')}

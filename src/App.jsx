@@ -37,23 +37,23 @@ const FeatureIcons = {
 
 const PainIcons = {
   money: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={accent} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
     </svg>
   ),
   complex: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={accent} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="12" r="10"/>
       <path d="M12 8v4l3 3"/>
     </svg>
   ),
   addons: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={accent} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
       <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
     </svg>
   ),
   mismatch: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={accent} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
       <path d="M18 6L6 18M6 6l12 12"/>
     </svg>
   ),
@@ -168,33 +168,49 @@ export default function App() {
 
       {/* Pain points */}
       <section style={{
-        background: light,
-        borderTop: `1px solid ${border}`,
-        borderBottom: `1px solid ${border}`,
-        padding: '64px 40px',
+        background: '#0d0d0f',
+        padding: '80px 40px',
       }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-          <p style={{ textAlign: 'center', fontSize: '12px', fontWeight: '700', color: '#9ca3af', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '36px' }}>
-            Sound familiar?
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '14px' }}>
-            {painPoints.map((p, i) => (
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <p style={{ fontSize: '11px', fontWeight: '700', color: '#4b5563', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '16px' }}>
+              Sound familiar?
+            </p>
+            <h2 style={{ fontSize: '38px', fontWeight: '900', letterSpacing: '-0.03em', color: '#ffffff', lineHeight: 1.15 }}>
+              Other CRMs are <span style={{ color: accent }}>robbing you.</span>
+            </h2>
+            <p style={{ fontSize: '16px', color: '#6b7280', marginTop: '14px', lineHeight: 1.7, maxWidth: '520px', margin: '14px auto 0' }}>
+              You're paying too much, learning too much, and getting too little. Real estate agents deserve better than corporate software built for someone else.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
+            {[
+              { icon: 'money', title: 'Overpriced', body: 'Most CRMs charge $50–$300/month. For what? Features you never use and add-ons that nickel-and-dime you every step.' },
+              { icon: 'complex', title: 'Overcomplicated', body: 'Hours of setup. Days of training videos. You went into real estate to sell homes — not to become a software expert.' },
+              { icon: 'addons', title: 'Constant Upsells', body: 'Email tools. Dialer integrations. Reporting dashboards. Every basic feature is an extra charge.' },
+              { icon: 'mismatch', title: 'Built for Someone Else', body: "Enterprise CRMs are designed for 500-person sales teams. You're one agent. It shouldn't feel like you're flying a jet to get groceries." },
+            ].map((p, i) => (
               <div key={i} style={{
-                display: 'flex', alignItems: 'center', gap: '14px',
-                background: '#ffffff', border: `1px solid ${border}`,
-                borderRadius: '10px', padding: '18px 20px',
-                boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(255,255,255,0.08)',
+                borderRadius: '12px', padding: '24px',
               }}>
-                <div style={{ width: '36px', height: '36px', background: accent + '10', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: '38px', height: '38px', background: accent + '20', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px' }}>
                   {PainIcons[p.icon]}
                 </div>
-                <span style={{ fontSize: '14px', color: '#374151', fontWeight: '500', lineHeight: 1.5 }}>{p.text}</span>
+                <div style={{ fontSize: '15px', fontWeight: '700', color: '#ffffff', marginBottom: '8px' }}>{p.title}</div>
+                <div style={{ fontSize: '13px', color: '#6b7280', lineHeight: 1.7 }}>{p.body}</div>
               </div>
             ))}
           </div>
-          <p style={{ textAlign: 'center', fontSize: '16px', color: dark, fontWeight: '700', marginTop: '40px' }}>
-            There's a better way. <span style={{ color: accent }}>We built it.</span>
-          </p>
+
+          <div style={{ textAlign: 'center', marginTop: '48px', padding: '28px', background: accent + '14', border: `1px solid ${accent}40`, borderRadius: '14px' }}>
+            <p style={{ fontSize: '20px', fontWeight: '800', color: '#ffffff', letterSpacing: '-0.02em' }}>
+              There's a better way. <span style={{ color: accent }}>We built it.</span>
+            </p>
+            <p style={{ fontSize: '14px', color: '#9ca3af', marginTop: '8px' }}>$20/month. Everything included. No gotchas.</p>
+          </div>
         </div>
       </section>
 

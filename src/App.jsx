@@ -116,23 +116,9 @@ export default function App() {
         padding: '96px 40px 80px',
         textAlign: 'center',
       }}>
-        {/* Glossy COOPRM wordmark */}
+        {/* Glossy animated COOPRM wordmark */}
         <div style={{ marginBottom: '36px' }}>
-          <span style={{
-            fontSize: '88px',
-            fontWeight: '900',
-            letterSpacing: '-0.05em',
-            lineHeight: 1,
-            display: 'inline-block',
-            background: `linear-gradient(160deg, #1a1a1a 0%, #C8102E 35%, #ff6b6b 50%, #C8102E 65%, #111827 100%)`,
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            filter: 'drop-shadow(0 2px 12px rgba(200,16,46,0.25))',
-            fontFamily: "'Inter', sans-serif",
-          }}>
-            COOPRM
-          </span>
+          <span className="glossy-wordmark">COOPRM</span>
         </div>
 
         <div style={{

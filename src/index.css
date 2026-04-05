@@ -2,3 +2,35 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Inter', sans-serif; background: #ffffff; color: #111827; -webkit-font-smoothing: antialiased; }
 a { text-decoration: none; }
+
+@keyframes shine {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.glossy-wordmark {
+  font-size: 96px;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(
+    105deg,
+    #111827 0%,
+    #C8102E 20%,
+    #111827 35%,
+    #ff4d4d 48%,
+    #ffffff 52%,
+    #ff4d4d 56%,
+    #111827 65%,
+    #C8102E 80%,
+    #111827 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shine 3.5s linear infinite;
+  filter: drop-shadow(0 2px 16px rgba(200,16,46,0.30));
+}

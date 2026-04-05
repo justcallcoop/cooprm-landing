@@ -19,7 +19,7 @@ function GridPattern({ offsetX, offsetY }) {
           <path
             d={`M ${GRID_SIZE} 0 L 0 0 0 ${GRID_SIZE}`}
             fill="none"
-            stroke="rgba(200,16,46,0.25)"
+            stroke="rgba(200,16,46,0.5)"
             strokeWidth="1"
           />
         </motion.pattern>
@@ -54,7 +54,7 @@ function InfiniteGridHero() {
       style={{ position: 'relative', background: '#ffffff', overflow: 'hidden' }}
     >
       {/* Dim base grid */}
-      <div style={{ position: 'absolute', inset: 0, opacity: 0.08 }}>
+      <div style={{ position: 'absolute', inset: 0, opacity: 0.18 }}>
         <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} />
       </div>
 
